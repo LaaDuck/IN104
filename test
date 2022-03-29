@@ -1,2 +1,17 @@
-test
-je fais un test
+etape 1
+
+trouver un dictionnaire
+
+demander à l'utilisateur de rentrer un mot de 5 lettres
+
+vérifier que le mot est dans le dictionnaire
+
+vérifier que le mot fait bien 5 lettres
+
+vérifier pour chacune des lettres si elles appartiennent au mot attendu
+
+si oui, vérifier si elle est a la bonne place ou non
+
+faire en sorte que le joueur ait 6 essais
+
+si il n'a pas trouvé afficher un message d'erreur
