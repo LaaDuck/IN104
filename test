@@ -1,16 +1,16 @@
 etape 1
 
-trouver un dictionnaire
+trouver un dictionnaire : OK! : dico.h
 
-demander à l'utilisateur de rentrer un mot de 5 lettres
+demander à l'utilisateur de rentrer un mot de 5 lettres : OK ! : mot.c
 
-vérifier que le mot est dans le dictionnaire
+vérifier que le mot est dans le dictionnaire : valentin ->
 
-vérifier que le mot fait bien 5 lettres
+vérifier que le mot fait bien 5 lettres : OK! : veriftaillemot.c 
 
-vérifier pour chacune des lettres si elles appartiennent au mot attendu
+vérifier pour chacune des lettres si elles appartiennent au mot attendu : OK! : veriflettre.c
 
-si oui, vérifier si elle est a la bonne place ou non
+si oui, vérifier si elle est a la bonne place ou non : laura : dans le meme code
 
 faire en sorte que le joueur ait 6 essais
 
