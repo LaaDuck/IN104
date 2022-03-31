@@ -4,10 +4,10 @@
 
 int veriftaillemot (char* mot) {
     if (strlen(mot)==5) {
-        return 0;
+        return 1;
     } else {
         printf ("Le mot n'est pas de la bonne longueur\n");
-        return 1;
+        return 0;
     }
 }
 
