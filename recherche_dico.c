@@ -8,19 +8,21 @@ char** charger_dico(char* filename, int* ndico) {
     char c;
     while(!feof(fp)) {
         c = fgetc(fp);
-        if (c == '\n') *ndico++;
+        if (c == 10) {
+            (*ndico)++;
+        }
     }
     fclose(fp);
 
-    printf("ndico %d \n", *ndico);
     char** dico = malloc(sizeof(char*)* *ndico);
-    fp = fopen(filename, "r");
+    FILE* fp2 = fopen(filename, "r");
     int i = 0;
-    while(!feof(fp) && i < *ndico) {
-        fgets(dico[i],256,fp);
+    while(!feof(fp2) && i < *ndico) {
+        dico[i] = malloc(sizeof(char*));
+        fscanf(fp2, "%s\n", dico[i]);
         i++;
     }
-    fclose(fp);
+    fclose(fp2);
     return dico;
 }
 

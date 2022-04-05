@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "mot.c"
 #include "recherche_dico.c"
@@ -11,7 +12,6 @@ int main(){
     char* tentative = malloc(sizeof(char)*256);
     mot(tentative);
     while(!recherche_dico(tentative, dico, *ndico)) {
-        printf("2\n");
         printf("Votre mot n'est pas dans le dictionnaire\n");
         mot(tentative);
     }
