@@ -24,7 +24,7 @@ void veriflettre (char* solution , char* tentative) {
             if ( (int) solution[i] == tableau[j]) {
                 tableau[j] = -2;
                 autrepart++;
-                break;
+                break; // on met fin à la boucle directement
             }
         }
     }
@@ -33,8 +33,10 @@ void veriflettre (char* solution , char* tentative) {
         if (tableau[i] == -1) printf("%s%c%s", VERT, tentative[i], RESET);
         if (tableau[i] == -2) printf("%s%c%s", JAUNE, tentative[i], RESET);
         if (tableau[i] >0) printf("%c", tentative[i]);
-    
     }
+    
     printf("\n");
         
 }
+
+// il faut que je travaille sur le fait que actuellement, une lettre qui a pris la valeur -1 avant ou apres avoir pris la valeur -2

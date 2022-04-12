@@ -1,0 +1,5 @@
+
+
+
+void mot(char* mot);
+

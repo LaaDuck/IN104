@@ -10,8 +10,8 @@ vérifier que le mot fait bien 5 lettres : OK! : veriftaillemot.c
 
 vérifier pour chacune des lettres si elles appartiennent au mot attendu : OK! : veriflettre.c
 
-si oui, vérifier si elle est a la bonne place ou non : laura : dans le meme code
+si oui, vérifier si elle est a la bonne place ou non : laura : reste encore un petit peu de travail
 
-faire en sorte que le joueur ait 6 essais
+faire en sorte que le joueur ait 6 essais : ok done !
 
-si il n'a pas trouvé afficher un message d'erreur
+si il n'a pas trouvé afficher un message d'erreur : à faire le 19 avril !

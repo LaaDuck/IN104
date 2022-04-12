@@ -7,6 +7,7 @@
 #include "veriflettre.c"
 
 int main(){
+    for(int i=0; i<6; i++) {
     int* ndico = malloc(sizeof(int));
     char** dico = charger_dico("dico.txt", ndico); // car c'est un tableau de chaines de caractères ; 
     char* tentative = malloc(sizeof(char)*256); // on crée l'espace nécessaire pour mettre un mot dedans : celui de la tentative
@@ -15,7 +16,8 @@ int main(){
         printf("Votre mot n'est pas dans le dictionnaire\n"); // le prgramme renvoie un booléen, et tant que ce n'est pas 1 qui a été renvoyé, on renovie cette info
         mot(tentative);
     }
-    veriflettre("monde", tentative);
+    veriflettre("aller", tentative);
+    }
     return 0;
 }
 

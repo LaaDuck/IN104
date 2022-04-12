@@ -1,0 +1,4 @@
+
+
+
+int veriftaillemot (char* mot);
