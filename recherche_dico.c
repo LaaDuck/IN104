@@ -6,7 +6,7 @@ char** charger_dico(char* filename, int* ndico) {
     FILE* fp = fopen(filename, "r");
     *ndico = 0; //va servir à déterminer le nombre de ligne dans le dico
     char c;
-    while(!feof(fp)) {s
+    while(!feof(fp)) {
         c = fgetc(fp); // on lit le caractère actuel
         if (c == 10) { // si c==10 cela veut dire qu'on a à fiare à un retour à la ligne
             (*ndico)++;
