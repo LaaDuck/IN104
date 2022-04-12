@@ -13,11 +13,12 @@ int main(){
     char* tentative = malloc(sizeof(char)*256); // on crée l'espace nécessaire pour mettre un mot dedans : celui de la tentative
     mot(tentative); // on vérifie que le mot tenté vérifie tous les critères
     while(!recherche_dico(tentative, dico, *ndico)) {
-        printf("Votre mot n'est pas dans le dictionnaire\n"); // le prgramme renvoie un booléen, et tant que ce n'est pas 1 qui a été renvoyé, on renovie cette info
+        printf("Votre mot n'est pas dans le dictionnaire\n"); // le programme renvoie un booléen, et tant que ce n'est pas 1 qui a été renvoyé, on renvoie cette info
         mot(tentative);
     }
     veriflettre("aller", tentative);
     }
+    // il reste à dire au bout de 6 essais qu'il a échoué, ou dire dès que le mot est trouvé qu'il a fini le jeu !
     return 0;
 }
 
