@@ -27,7 +27,6 @@ int main(){
             break;
             }
     }
-    // il reste à dire au bout de 6 essais qu'il a échoué, ou dire dès que le mot est trouvé qu'il a fini le jeu !
     return 0;
 }
 
