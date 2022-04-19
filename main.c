@@ -8,7 +8,7 @@
 
 int main(){
     for(int i=0; i<6; i++) {
-        char* solution = "monde";
+        char* solution = "monde"; //prendre un mot de manière aléatoire dans le dico ?
         int* ndico = malloc(sizeof(int));
         char** dico = charger_dico("dico.txt", ndico); // car c'est un tableau de chaines de caractères ; 
         char* tentative = malloc(sizeof(char)*256); // on crée l'espace nécessaire pour mettre un mot dedans : celui de la tentative
