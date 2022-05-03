@@ -14,4 +14,25 @@ si oui, vérifier si elle est a la bonne place ou non : laura : reste encore un 
 
 faire en sorte que le joueur ait 6 essais : ok done !
 
-si il n'a pas trouvé afficher un message d'erreur : à faire le 19 avril !
+si il n'a pas trouvé afficher un message d'erreur : ok !
+
+etape 2:
+
+Première idée pour implémenter de manière a ce que l'ordinateur joue le mieux possible :
+
+copier le dictionnaire,
+si certaines lettres sont vertes, alors supprimer dans la copie du dictionnaire tous les mots qui ne possèdent pas cette lettre à la bonne place
+si certaines lettres sont jaunes, éliminer tous les mots du dictionnaire copié qui ne possèdent pas cette lettre dans leur mot
+enfin, essayer au hasard l'un des mots du dictionnaire restant
+
+question à se poser : 
+- est ce quil faut mieux analyser les lettres jaunes et vertes, donc utiliser celles qui sont bonnes
+- ou au contraire éliminer tous les mots qui possèdent les lettres grises donc utiliser les lettres mauvaises pour jouer le mieux possible
+
+-> deux techniques à essayer
+
+ensuite essayer un mot présent dans le dictionnaire affiné de manière aléatoire
+
++ au départ rentrer un premier mot ( regarder sur internet avec la théorie de l'information en justification) : celui qui est le plus
+susceptible d'avoir des lettres qui reviennent souvent.
+
