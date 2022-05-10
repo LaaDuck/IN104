@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 void ordi(char* tentative, char** dico, int ndico, int* possibles, int n_possibles) {
+    // il manque de le faire jouer le mot "saine" dès la première tentative
     int r = rand()%n_possibles;
     int compteur = 0;
     for (int i = 0 ; i < ndico ; i++ ){
@@ -23,7 +24,7 @@ int maj_possibles_ordi(char* tentative, int*tab_verif, int* possibles, char** di
         while (possibles[i] == 0) index_mot ++;
 
         for (int lettre = 0; lettre < 5; lettre++) {
-            if (tab_verif == -1) {
+            if (tab_verif[lettre] == -1) {
                 if (tentative[lettre] != dico[i][lettre]) {
                     n_possibles_new--;
                     possibles[i] = 0;

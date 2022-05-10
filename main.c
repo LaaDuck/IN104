@@ -15,11 +15,12 @@ int main(int argc, char** argv) {
             char* solution = "monde";
             int ndico = 0;
             char** dico = charger_dico("dico.txt", &ndico);
-            int possibles[*ndico] = {1};
-            int n_possibles = *ndico;
+            int* possibles[*ndico] = {1};
+            int n_possibles = ndico;
             char* tentative = malloc(sizeof(char)*256);
             int tab_verif[5] = {0};
             int n_tentatives = 0;
+            int i=0;
             do {
                 ordi(tentative, dico, possibles, &n_possibles);
                 printf("%s \n", tentative);
@@ -29,7 +30,7 @@ int main(int argc, char** argv) {
                     printf("L'ordinateur a gagné\n");
                 }
                 i++;
-            } while(i < 6)
+            } while(i < 6);
             printf("L'ordinateur a perdu\n");
         } else if (strcmp(argv[1],"joueur") == 0) {
             for(int i=0; i<6; i++) {
