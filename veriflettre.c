@@ -6,10 +6,12 @@
 #define JAUNE "\x1B[33m"
 #define RESET "\x1B[0m"
 
-void veriflettre (char* solution , char* tentative) {
+void veriflettre (char* solution , char* tentative, int* tableau) {
     int enplace = 0;
     int autrepart = 0;
-    int tableau[5] = {0}; //pour chaque lettre : -1 si en place -2 si autre part, ASCII sinon
+    for (int i=0; i < 5; i++) {
+        tableau[i] = 0; //pour chaque lettre : -1 si en place -2 si autre part, ASCII sinon
+    }
     for (int i=0; i < 5; i++) {
         if (tentative[i] == solution[i]) {
             tableau[i] = -1;

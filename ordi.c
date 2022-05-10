@@ -2,13 +2,52 @@
 #include <string.h>
 #include <stdlib.h>
 
-void ordi(char* tentative, char** dico, int ndico) {
-    // copier le dico : on va utiliser la copie dans ce dictionnaire
-    for (int i = 0; i < ndico; i++) {
-        for (int i=0 ; i<5 ; i++) {
-        if (tentative[i]==-1) {/*ajouter dans une liste tous les mots où la lettre verte est*/}
-
-            // ou avec la deuxième méthode : éliminer tous les mots du dico qui possèdent les lettres grises
-
+void ordi(char* tentative, char** dico, int ndico, int* possibles, int n_possibles) {
+    int r = rand()%n_possibles;
+    int compteur = 0;
+    for (int i = 0 ; i < ndico ; i++ ){
+        if ( possibles[i]!=0 ) {
+            if (compteur == r) {
+                strcpy(dico[i], tentative);
+                return;
+            }
+            compteur++;
+        }
     }
+}
+
+int maj_possibles_ordi(char* tentative, int*tab_verif, int* possibles, char** dico, int n_possibles) {
+    int index_mot = 0;
+    int n_possibles_new = n_possibles;
+    for (int i = 0; i < n_possibles; i++ ) {
+        while (possibles[i] == 0) index_mot ++;
+
+        for (int lettre = 0; lettre < 5; lettre++) {
+            if (tab_verif == -1) {
+                if (tentative[lettre] != dico[i][lettre]) {
+                    n_possibles_new--;
+                    possibles[i] = 0;
+                    break;
+                }
+                
+            }
+        }
+
+        if (possibles[i] == 0) continue;
+
+        for (int lettre = 0; lettre < 5; lettre++) {
+            if (tab_verif[lettre] > 0) {
+                for (int j = 0; j < 5; j++) {
+                    if (dico[i][j] != tentative[lettre]) {
+                        n_possibles_new--;
+                        possibles[i] = 0;
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    return n_possibles;
+
 }
