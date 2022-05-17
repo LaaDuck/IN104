@@ -15,7 +15,7 @@ int main(int argc, char** argv) {
             char* solution = "monde";
             int ndico = 0;
             char** dico = charger_dico("dico.txt", &ndico);
-            int* possibles[*ndico] = {1};
+            int possibles[ndico] = {1};
             int n_possibles = ndico;
             char* tentative = malloc(sizeof(char)*256);
             int tab_verif[5] = {0};
