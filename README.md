@@ -5,9 +5,9 @@ La commande pour pouvoir jouer le jeu :
 
 à taper dans le main :
 
-cd Documents
-cd IN104
-gcc -o main.out main.c 
+cd Documents puis
+cd IN104 puis
+gcc -o main.out main.c  puis
 ./main.out
 
 puis suivre les étapes indiquées par le jeu.
