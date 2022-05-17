@@ -1,14 +1,14 @@
 #wordle
-Ceci est une implémentation de WORDLE. 
+Bienvenue ! Ceci est une implémentation de WORDLE. 
 
-La commande pour pouvoir jouer le jeu :
+La commande si vous voulez jouer le jeu vous-même :
 
 à taper dans le main :
 
-cd Documents puis
-cd IN104 puis
-gcc -o main.out main.c  puis
-./main.out
+cd Documents
+cd IN104
+gcc -o main.out main.c 
+./main.out joueur
 
 puis suivre les étapes indiquées par le jeu.
 
@@ -21,3 +21,14 @@ Vous avez 6 tentatives, si vous n'avez pas trouvé à l'issue de ces 6 essais, l
 Si vous trouvez en moins de 6 essais, vous serez félicité. 
 
 Bonne partie !
+
+La commande si vous voulez que l'ordi joue le jeu :
+
+à taper dans le main :
+
+cd Documents
+cd IN104
+gcc -o main.out main.c 
+./main.out ordi
+
+Vous verrez par la suite s'afficher les tentatives jouées par l'ordinateur, et le résultat final : si il a gagné ou non. 

@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 #include "mot.c"
 #include "recherche_dico.c"
 #include "veriflettre.c"
+#include "ordi.c"
 
 int main(int argc, char** argv) {
     if (argc < 2) {
@@ -12,29 +14,38 @@ int main(int argc, char** argv) {
         return 0;
     } else {
         if (strcmp(argv[1],"ordi") == 0) {
-            char* solution = "monde";
+            printf("Mode ordinateur : \n");
+            srand(time(NULL));
+            char* solution = "mamie";
             int ndico = 0;
             char** dico = charger_dico("dico.txt", &ndico);
-            int possibles[ndico] = {1};
+            int* possibles = malloc(sizeof(int)*ndico);
+            for (int i=0; i<ndico; i++) {
+                possibles[i] = 1;
+            }
             int n_possibles = ndico;
-            char* tentative = malloc(sizeof(char)*256);
+            char* tentative = malloc(sizeof(char)*6);
             int tab_verif[5] = {0};
             int n_tentatives = 0;
             int i=0;
+
             do {
-                ordi(tentative, dico, possibles, &n_possibles);
-                printf("%s \n", tentative);
+                ordi(tentative, dico, ndico, possibles, n_possibles);
+                printf("Tentative de l'ordinateur : ");
                 veriflettre(solution, tentative, tab_verif);
-                n_possibles = maj_possibles_ordi(tab_verif, possibles, dico, n_possibles);
-                if (strcmp(tentative, solution) == 0) {
+                if (strcmp(solution, tentative) == 0) {
                     printf("L'ordinateur a gagné\n");
+                    return 0;
                 }
+                n_possibles = maj_possibles_ordi(tentative, tab_verif, possibles, n_possibles, dico, ndico);
                 i++;
             } while(i < 6);
             printf("L'ordinateur a perdu\n");
+            return 0;
         } else if (strcmp(argv[1],"joueur") == 0) {
+            printf("Mode joueur : \n");
             for(int i=0; i<6; i++) {
-                char* solution = "monde"; //prendre un mot de manière aléatoire dans le dico ?
+                char* solution = "mamie"; //prendre un mot de manière aléatoire dans le dico ?
                 int* ndico = malloc(sizeof(int));
                 char** dico = charger_dico("dico.txt", ndico); // car c'est un tableau de chaines de caractères ; 
                 char* tentative = malloc(sizeof(char)*256); // on crée l'espace nécessaire pour mettre un mot dedans : celui de la tentative
