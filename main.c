@@ -16,7 +16,7 @@ int main(int argc, char** argv) {
         if (strcmp(argv[1],"ordi") == 0) {
             printf("Mode ordinateur : \n");
             srand(time(NULL));
-            char* solution = "mamie";
+            char* solution = "meres";
             int ndico = 0;
             char** dico = charger_dico("dico.txt", &ndico);
             int* possibles = malloc(sizeof(int)*ndico);
@@ -45,7 +45,7 @@ int main(int argc, char** argv) {
         } else if (strcmp(argv[1],"joueur") == 0) {
             printf("Mode joueur : \n");
             for(int i=0; i<6; i++) {
-                char* solution = "mamie"; //prendre un mot de manière aléatoire dans le dico ?
+                char* solution = "meres"; //prendre un mot de manière aléatoire dans le dico ?
                 int* ndico = malloc(sizeof(int));
                 char** dico = charger_dico("dico.txt", ndico); // car c'est un tableau de chaines de caractères ; 
                 char* tentative = malloc(sizeof(char)*256); // on crée l'espace nécessaire pour mettre un mot dedans : celui de la tentative
