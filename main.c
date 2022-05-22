@@ -41,6 +41,9 @@ int main(int argc, char** argv) {
                 i++;
             } while(i < 6);
             printf("L'ordinateur a perdu\n");
+            free_dico(dico, ndico);
+            free(tentative);
+            free(possibles);
             return 0;
         } else if (strcmp(argv[1],"joueur") == 0) {
             printf("Mode joueur : \n");
@@ -65,6 +68,10 @@ int main(int argc, char** argv) {
                     printf("Dommage... Tu as perdu ! Tu devais trouver le mot %s !\n", solution );
                     break;
                     }
+                free_dico(dico, *ndico);
+                free(ndico);
+                free(tentative);
+                free(tab_verif);
             }
             return 0;
         } else {

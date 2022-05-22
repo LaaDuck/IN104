@@ -33,5 +33,12 @@ int recherche_dico(char* mot, char** dico, int ndico) {
     return 0;
 }
 
+void free_dico(char** dico, int ndico) {
+    for (int i=0; i<ndico; i++) {
+        free(dico[i]);
+    }
+    free(dico);
+}
+
 
 // penser à libérer tous les malloc

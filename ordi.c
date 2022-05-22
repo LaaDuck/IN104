@@ -2,6 +2,16 @@
 #include <string.h>
 #include <stdlib.h>
 
+int count_possibles(int* possibles, int ndico) {
+    int c = 0;
+    for (int i=0; i<ndico; i++) {
+        if (possibles[i] != 0) {
+            c++;
+        }
+    }
+    return c;
+}
+
 void ordi(char* tentative, char** dico, int ndico, int* possibles, int n_possibles) {
     // il manque de le faire jouer le mot "saine" dès la première tentative
     int r = rand()%n_possibles;
@@ -17,17 +27,14 @@ void ordi(char* tentative, char** dico, int ndico, int* possibles, int n_possibl
     }
 }
 
-int lettre_dans_mot(char lettre, char* mot) {
-    int i = 0;
-    while (mot[i] != '\0') {
-        if (mot[i] == lettre) return 1;
-        i++;
+int verif_grise(char lettre, char* mot, int* tab_verif) {
+    for (int i = 0; i < 5; i++) {
+        if (mot[i] == lettre && tab_verif[i] > 0) return 1;
     }
     return 0;
 }
 
 int maj_possibles_ordi(char* tentative, int* tab_verif, int* possibles, int n_possibles, char** dico, int ndico) {
-    int index_mot = 0;
     for (int i = 0; i < ndico; i++ ) {
         if (possibles[i] == 0) continue;
 
@@ -43,7 +50,7 @@ int maj_possibles_ordi(char* tentative, int* tab_verif, int* possibles, int n_po
         if (possibles[i] == 0) continue;
 
         for (int lettre = 0; lettre < 5; lettre++) {
-            if (tab_verif[lettre] > 0 && lettre_dans_mot(tentative[lettre], dico[i])) { //lettre grise
+            if (tab_verif[lettre] > 0 && verif_grise(tentative[lettre], dico[i], tab_verif)) { //lettre grise
                 n_possibles--;
                 possibles[i] = 0;
                 break;
@@ -53,3 +60,4 @@ int maj_possibles_ordi(char* tentative, int* tab_verif, int* possibles, int n_po
 
     return n_possibles;
 }
+
